@@ -130,7 +130,7 @@ HEADER IN INDEX HTML
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url("images/main-img.jpg");
+    url("../images/main-img.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
