@@ -8,6 +8,7 @@
   --border-color: #ececec;
   --light-border-color: #eeeeee;
   --contact-footer-color: rgba(255, 255, 255, 0.6);
+  --social-icon-color: #afb1b8;
 }
 body {
   font-family: "Roboto", "Raleway", sans-serif;
@@ -85,13 +86,17 @@ nav {
 .nav-items li {
   margin: 0 23px;
 }
+.adress-icon {
+  fill: var(--grey-color);
+  margin-right: 10px;
+}
 .header-address {
   margin-left: 348px;
   width: 553px;
   justify-content: flex-end;
 }
 .nav-mail {
-  margin-right: 50px;
+  margin-right: 30px;
 }
 .nav-item {
   font-weight: 500;
@@ -103,15 +108,32 @@ nav {
 .nav-item:focus {
   color: var(--main-color);
 }
+
 .contact-details {
   color: var(--grey-color);
+  display: flex;
+  align-items: center;
 }
+.contact-details:focus .adress-icon,
+.contact-details:hover .adress-icon {
+  fill: var(--main-color);
+}
+
 /* ===========
 HEADER IN INDEX HTML
 ============= */
-.header-bg {
+.header-img {
+  margin: 0 auto;
+  max-width: 1600px;
   height: 600px;
-  background-color: var(--dark-bg-color);
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("/images/main-img.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,6 +166,15 @@ SECTION ABOUT US
   padding: 94px 0;
   background-color: var(--white-color);
 }
+.icon-wrapper {
+  margin-bottom: 30px;
+  padding-top: 25px;
+  width: 270px;
+  height: 120px;
+  background: var(--light-bg-color);
+  border-radius: 4px;
+  text-align: center;
+}
 .about-us-text,
 .about-us-img {
   display: flex;
@@ -163,7 +194,7 @@ SECTION ABOUT US
   letter-spacing: 0.03em;
 }
 
-.about-us-text h3 {
+.middle-header {
   font-weight: bold;
   font-size: 14px;
   letter-spacing: 0.03em;
@@ -186,7 +217,7 @@ SECTION TEAM
   background-color: var(--light-bg-color);
   padding: 94px 0;
 }
-.team-box h2 {
+.section-header {
   padding-bottom: 50px;
   font-weight: bold;
   font-size: 36px;
@@ -216,12 +247,73 @@ SECTION TEAM
   letter-spacing: 0.03em;
 }
 .team-card p {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   font-size: 16px;
   letter-spacing: 0.03em;
-  color: var(--grey-color);
+  color: var(--);
+}
+.social-icon-wrapper {
+  display: flex;
+  margin-bottom: 30px;
+  margin-left: 32px;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--social-icon-color);
+}
+.elipse-icon {
+  margin-right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.elipse-icon:hover,
+.elipse-icon:focus {
+  background-color: var(--main-color);
+}
+.elipse-icon:hover .social-icon,
+.elipse-icon:focus .social-icon {
+  fill: var(--white-color);
+}
+/* ===========
+SECTION CLIENTS
+============= */
+.clients {
+  padding: 94px 0;
+}
+.clients-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.client {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--social-icon-color);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.client-logo {
+  width: 106px;
+  height: 60px;
+  fill: var(--social-icon-color);
 }
 
+.client:hover,
+.client:focus {
+  border: 1px solid var(--main-color);
+}
+.client:hover .client-logo,
+.client:focus .client-logo {
+  fill: var(--main-color);
+}
 /* ===========
 FOOTER
 ============= */
@@ -230,6 +322,7 @@ FOOTER
 }
 .footer-text {
   padding: 60px 0;
+  display: flex;
 }
 .address-box {
   color: var(--white-color);
@@ -246,14 +339,30 @@ FOOTER
   padding-top: 20px;
 }
 .address-box a {
-  padding-top: 9px;
+  padding-top: 16px;
   color: var(--contact-footer-color);
 }
-.address-box a:hover,
-.address-box a:focus {
+.footer-adress:hover,
+.footer-adress:focus {
   color: var(--main-color);
 }
-
+.footer-header {
+  padding-top: 13px;
+  color: var(--white-color);
+}
+.footer-social-icons-box {
+  margin-left: 70px;
+}
+.footer-social-icon-wrapper {
+  display: flex;
+  padding-top: 20px;
+}
+.footer-social-icon {
+  fill: var(--white-color);
+}
+.footer-elipse-icon {
+  background-color: rgba(255, 255, 255, 0.1);
+}
 /* ===========
 PORTFOLIO SECTION 
 ============= */
@@ -290,6 +399,12 @@ PORTFOLIO SECTION
   width: 370px;
   height: 404px;
   border: 1px solid var(--light-border-color);
+  cursor: pointer;
+}
+.portfolio-card:focus,
+.portfolio-card:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-card h4 {
   padding: 27px 0 20px 24px;
